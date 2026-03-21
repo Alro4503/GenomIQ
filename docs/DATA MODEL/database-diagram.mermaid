@@ -1,0 +1,124 @@
+erDiagram
+    USERS {
+        int id PK
+        string email
+        string hashed_password
+        string full_name
+        boolean is_active
+        timestamp created_at
+        string language_preference
+        boolean dark_mode
+    }
+    
+    SEQUENCES {
+        int id PK
+        int user_id FK
+        string name
+        string description
+        text sequence_data
+        string sequence_type
+        string format
+        int length
+        timestamp created_at
+    }
+    
+    SEQUENCE_ANNOTATIONS {
+        int id PK
+        int sequence_id FK
+        int start_position
+        int end_position
+        string annotation_type
+        string name
+        string description
+        string source
+        timestamp created_at
+    }
+    
+    ANALYSIS_HISTORY {
+        int id PK
+        int user_id FK
+        int sequence_id FK
+        string tool_name
+        jsonb parameters
+        string result_summary
+        timestamp created_at
+    }
+    
+    VISUALIZATION_SETTINGS {
+        int id PK
+        int user_id FK
+        string setting_type
+        jsonb settings
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    TOOL_RECOMMENDATIONS {
+        int id PK
+        int user_id FK
+        int sequence_id FK
+        string tool_name
+        real relevance_score
+        string justification
+        jsonb suggested_parameters
+        timestamp created_at
+    }
+    
+    AI_PROVIDERS {
+        int id PK
+        string name
+        string api_key
+        string base_url
+        string description
+        string model_name
+        boolean is_active
+        int priority
+        timestamp created_at
+        timestamp updated_at
+    }
+    
+    AI_PROVIDER_QUOTAS {
+        int id PK
+        string provider_name
+        int current_usage
+        int daily_limit
+        timestamp last_reset
+        boolean is_active
+    }
+    
+    CHAT_CONVERSATIONS {
+        int id PK
+        int user_id FK
+        string title
+        timestamp created_at
+        timestamp updated_at
+        boolean is_active
+        jsonb context_data
+    }
+    
+    CHAT_MESSAGES {
+        int id PK
+        int conversation_id FK
+        int user_id FK
+        text content
+        boolean is_from_user
+        timestamp created_at
+        string ai_provider
+        int tokens_used
+        int related_sequence_id FK
+        string related_tool
+    }
+    
+    USERS ||--o{ SEQUENCES : "tiene"
+    USERS ||--o{ VISUALIZATION_SETTINGS : "configura"
+    USERS ||--o{ ANALYSIS_HISTORY : "realiza"
+    USERS ||--o{ TOOL_RECOMMENDATIONS : "recibe"
+    USERS ||--o{ CHAT_CONVERSATIONS : "participa"
+    
+    SEQUENCES ||--o{ SEQUENCE_ANNOTATIONS : "contiene"
+    SEQUENCES ||--o{ ANALYSIS_HISTORY : "es analizada en"
+    SEQUENCES ||--o{ TOOL_RECOMMENDATIONS : "recibe recomendaciones para"
+    SEQUENCES ||--o{ CHAT_MESSAGES : "es referenciada en"
+    
+    CHAT_CONVERSATIONS ||--o{ CHAT_MESSAGES : "contiene"
+    USERS ||--o{ CHAT_MESSAGES : "envía"

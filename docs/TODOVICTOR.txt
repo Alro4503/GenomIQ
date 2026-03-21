@@ -1,0 +1,10 @@
+MÁS ADELANTE:
+Arreglar traducciones.
+
+PRODUCTIVO:
+- Hacer que funcione el OAuth
+- Hacer que funcione el blast
+
++
+
+GOOGLE CLOUD

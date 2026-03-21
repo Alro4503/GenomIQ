@@ -1,0 +1,30 @@
+flowchart TD
+    START([START]) --> ENTRY[ENTRY\nAI Chat]
+    ENTRY --> DECISION{DECISION}
+    DECISION -->|A| AI_CHAT[AI CHAT\nBioinformatics\nquery]
+    DECISION -->|B| TOOLS[TOOLS\nDirect access]
+    
+    AI_CHAT --> SEQUENCE[SEQUENCE\nInput/Selection]
+    TOOLS --> SEQUENCE
+    
+    SEQUENCE --> ANALYSIS[ANALYSIS\nProcessing]
+    ANALYSIS --> RESULTS[RESULTS\nVisualization + AI\nInsights]
+    
+    RESULTS --> NEXT{NEXT\nSTEP}
+    NEXT --> SAVE[SAVE\nResult/Sequence]
+    SAVE --> NEXT
+    
+    NEXT -->|New query| START
+    NEXT -->|Finish| END([END])
+    
+    style START fill:#8AE234,stroke:#333,stroke-width:2px
+    style END fill:#EF2929,stroke:#333,stroke-width:2px
+    style DECISION fill:#FCAF3E,stroke:#333,stroke-width:2px
+    style NEXT fill:#FCAF3E,stroke:#333,stroke-width:2px
+    style ENTRY fill:#8AE234,stroke:#333,stroke-width:2px
+    style AI_CHAT fill:#8AE234,stroke:#333,stroke-width:2px
+    style TOOLS fill:#8AE234,stroke:#333,stroke-width:2px
+    style SEQUENCE fill:#8AE234,stroke:#333,stroke-width:2px
+    style ANALYSIS fill:#8AE234,stroke:#333,stroke-width:2px
+    style RESULTS fill:#8AE234,stroke:#333,stroke-width:2px
+    style SAVE fill:#73D216,stroke:#333,stroke-width:2px
