@@ -1,0 +1,19 @@
+# Activate virtual environment:
+source $(poetry env info --path)/bin/activate
+
+# Run server (with activated environment):
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+# Run server (without activating environment):
+poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+# Access the API:
+http://localhost:8000          # Local access
+http://localhost:8000/docs     # Local OpenAPI documentation
+
+# Access from other IPs:
+http://188.245.212.236:8000    # Using server IP
+http://188.245.212.236:8000/docs
+
+# Note: Using --host 0.0.0.0 makes the server accept connections from any IP.
+# To access from other devices, use the server's IP instead of localhost.

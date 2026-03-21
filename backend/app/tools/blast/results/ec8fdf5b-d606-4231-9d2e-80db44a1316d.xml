@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastn</BlastOutput_program>
+  <BlastOutput_version>BLASTN 2.16.1+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>core_nt</BlastOutput_db>
+  <BlastOutput_query-ID>Query_5656455</BlastOutput_query-ID>
+  <BlastOutput_query-def>No definition line</BlastOutput_query-def>
+  <BlastOutput_query-len>312</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_expect>0.01</Parameters_expect>
+      <Parameters_sc-match>2</Parameters_sc-match>
+      <Parameters_sc-mismatch>-3</Parameters_sc-mismatch>
+      <Parameters_gap-open>5</Parameters_gap-open>
+      <Parameters_gap-extend>2</Parameters_gap-extend>
+      <Parameters_filter>T;</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_5656455</Iteration_query-ID>
+  <Iteration_query-def>No definition line</Iteration_query-def>
+  <Iteration_query-len>312</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>gi|937348263|gb|KR085474.1|</Hit_id>
+  <Hit_def>Hirtodrosophila aff. subflavohalterata 1 LJR-2015 voucher MYCBR299B cytochrome oxidase subunit 1 (COI) gene, partial cds; mitochondrial &gt;gi|937348265|gb|KR085475.1| Hirtodrosophila aff. subflavohalterata 1 LJR-2015 voucher MYCBR299A2 cytochrome oxidase subunit 1 (COI) gene, partial cds; mitochondrial &gt;gi|937348267|gb|KR085476.1| Hirtodrosophila aff. subflavohalterata 1 LJR-2015 voucher MYCBR278A cytochrome oxidase subunit 1 (COI) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>KR085474</Hit_accession>
+  <Hit_len>717</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>187.033</Hsp_bit-score>
+      <Hsp_score>206</Hsp_score>
+      <Hsp_evalue>1.18476e-42</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>219</Hsp_query-to>
+      <Hsp_hit-from>96</Hsp_hit-from>
+      <Hsp_hit-to>234</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>131</Hsp_identity>
+      <Hsp_positive>131</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>139</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCC</Hsp_qseq>
+      <Hsp_hseq>TCATGCATTTATTATAATTTTTTTTATAGTAATACCTATTATAATTGGAGGATTTGGTAATTGACTAGTTCCCCTAATATTAGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCC</Hsp_hseq>
+      <Hsp_midline>|||||||||||||||||||||||||||||| |||||||||||||||||||| || ||||| |||||| | ||||||||| | |||||||||||||||||||||||||||||||||||||||||||||||||||||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>71.6177</Hsp_bit-score>
+      <Hsp_score>78</Hsp_score>
+      <Hsp_evalue>6.56433e-08</Hsp_evalue>
+      <Hsp_query-from>223</Hsp_query-from>
+      <Hsp_query-to>301</Hsp_query-to>
+      <Hsp_hit-from>164</Hsp_hit-from>
+      <Hsp_hit-to>242</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>79</Hsp_align-len>
+      <Hsp_qseq>TTCCTTTAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTT</Hsp_qseq>
+      <Hsp_hseq>TTCCCCTAATATTAGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCCCAGCCTT</Hsp_hseq>
+      <Hsp_midline>||||  ||||  | ||||| ||||| || ||||| || ||  ||||||||||||| |||||||||||||| ||  ||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>gi|2181245149|gb|OM323234.1|</Hit_id>
+  <Hit_def>Pentatomidae sp. isolate 20070901 cytochrome c oxidase subunit I (COX1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>OM323234</Hit_accession>
+  <Hit_len>1190</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>186.132</Hsp_bit-score>
+      <Hsp_score>205</Hsp_score>
+      <Hsp_evalue>4.13523e-42</Hsp_evalue>
+      <Hsp_query-from>82</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>109</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>139</Hsp_identity>
+      <Hsp_positive>139</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>150</Hsp_align-len>
+      <Hsp_qseq>CATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>CATGCATTTATTATAATTTTTTTTATAGTAATACCTATTATAATTGGAGGATTCGGAAACTGACTAATCCCTTTAATAATTGGAGCCCCAGATATAGCATTTCCCCGAATAAATAATATAAGATTTTGATTACTACCC-CCTT-CTTTAA</Hsp_hseq>
+      <Hsp_midline>||||||||||||||||||||||||||||| |||||||||||||||||||| ||||| ||||||||||||||  ||||||||||||||||||| |||||||| |||||||||||||||||||| |||||| |||||||| |||| ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>101.373</Hsp_bit-score>
+      <Hsp_score>111</Hsp_score>
+      <Hsp_evalue>1.35301e-16</Hsp_evalue>
+      <Hsp_query-from>225</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>178</Hsp_hit-from>
+      <Hsp_hit-to>256</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>71</Hsp_identity>
+      <Hsp_positive>71</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>80</Hsp_align-len>
+      <Hsp_qseq>CCTTTAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>CCTTTAATAATTGGAGCCCCAGATATAGCATTTCCCCGAATAAATAATATAAGATTTTGATTACTACCCCCTT-CTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||||| |||||||| |||||||| |||||||| ||  |||||||||||||||||||| ||||||| |||| ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>gi|2073094398|gb|MN817012.1|</Hit_id>
+  <Hit_def>Belostoma sp. 50 TBG-2019 isolate 2603 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817012</Hit_accession>
+  <Hit_len>638</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>105</Hsp_hit-from>
+      <Hsp_hit-to>253</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>179</Hsp_hit-from>
+      <Hsp_hit-to>253</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>gi|2073094418|gb|MN817022.1|</Hit_id>
+  <Hit_def>Belostoma sp. 60 TBG-2019 isolate 2258 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817022</Hit_accession>
+  <Hit_len>650</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>117</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>191</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>gi|2073094416|gb|MN817021.1|</Hit_id>
+  <Hit_def>Belostoma sp. 59 TBG-2019 isolate 2257 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817021</Hit_accession>
+  <Hit_len>650</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>117</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>191</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>gi|2073094408|gb|MN817017.1|</Hit_id>
+  <Hit_def>Belostoma sp. 55 TBG-2019 isolate 2611 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817017</Hit_accession>
+  <Hit_len>650</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>117</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>191</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>gi|2550529945|gb|OP034100.1|</Hit_id>
+  <Hit_def>Belostomatidae sp. voucher IEGEBA-EVO-0384 cytochrome oxidase subunit 1 (COI) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>OP034100</Hit_accession>
+  <Hit_len>658</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>133</Hsp_hit-from>
+      <Hsp_hit-to>281</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>207</Hsp_hit-from>
+      <Hsp_hit-to>281</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>gi|2073094404|gb|MN817015.1|</Hit_id>
+  <Hit_def>Belostoma sp. 53 TBG-2019 isolate 2609 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817015</Hit_accession>
+  <Hit_len>650</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>117</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>191</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>gi|2073094402|gb|MN817014.1|</Hit_id>
+  <Hit_def>Belostoma sp. 52 TBG-2019 isolate 2606 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817014</Hit_accession>
+  <Hit_len>650</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>117</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>191</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>gi|2073094400|gb|MN817013.1|</Hit_id>
+  <Hit_def>Belostoma sp. 51 TBG-2019 isolate 2604 cytochrome oxidase subunit I (cox1) gene, partial cds; mitochondrial</Hit_def>
+  <Hit_accession>MN817013</Hit_accession>
+  <Hit_len>650</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>183.427</Hsp_bit-score>
+      <Hsp_score>202</Hsp_score>
+      <Hsp_evalue>1.44334e-41</Hsp_evalue>
+      <Hsp_query-from>81</Hsp_query-from>
+      <Hsp_query-to>231</Hsp_query-to>
+      <Hsp_hit-from>117</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>137</Hsp_identity>
+      <Hsp_positive>137</Hsp_positive>
+      <Hsp_gaps>2</Hsp_gaps>
+      <Hsp_align-len>151</Hsp_align-len>
+      <Hsp_qseq>TCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TCATGCTTTTATTATAATTTTCTTTATAGTTATACCAATTATAATTGGAGGATTCGGAAACTGATTAGTCCCCCTAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC--CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||||| |||||||||||||| |||||||||||||| |||||||||||||| ||||| |||||| || |||||||||||||||| |||||||| |||||||||||||||||||||||||||||||||||| |||||||  || | ||||||</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>76.1261</Hsp_bit-score>
+      <Hsp_score>83</Hsp_score>
+      <Hsp_evalue>5.38833e-09</Hsp_evalue>
+      <Hsp_query-from>229</Hsp_query-from>
+      <Hsp_query-to>304</Hsp_query-to>
+      <Hsp_hit-from>191</Hsp_hit-from>
+      <Hsp_hit-to>265</Hsp_hit-to>
+      <Hsp_query-frame>1</Hsp_query-frame>
+      <Hsp_hit-frame>1</Hsp_hit-frame>
+      <Hsp_identity>63</Hsp_identity>
+      <Hsp_positive>63</Hsp_positive>
+      <Hsp_gaps>1</Hsp_gaps>
+      <Hsp_align-len>76</Hsp_align-len>
+      <Hsp_qseq>TAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAA</Hsp_qseq>
+      <Hsp_hseq>TAATAATTGGTGCCCCAGATATAGCATTCCCCCGAATAAATAATATAAGTTTTTGATTACTACC-CCCTGCTTTAA</Hsp_hseq>
+      <Hsp_midline>|||| ||||| || |||||||| ||||| || ||  ||||||||||||| |||||| ||||||| || | ||||||</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>115113413</Statistics_db-num>
+      <Statistics_db-len>875653061455</Statistics_db-len>
+      <Statistics_hsp-len>0</Statistics_hsp-len>
+      <Statistics_eff-space>0</Statistics_eff-space>
+      <Statistics_kappa>0.41</Statistics_kappa>
+      <Statistics_lambda>0.625</Statistics_lambda>
+      <Statistics_entropy>0.78</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>

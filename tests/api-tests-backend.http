@@ -1,0 +1,345 @@
+# FastAPI Complete REST API Tests
+# File: api_tests.http
+# Usage: Use with REST Client extension in VSCode
+
+### Variables
+@baseUrl = http://localhost:8000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzQ3OTM0Mjc3fQ.lLbHx9TmhT9PFZw-zQO9mUrGB7QKg32qQG8WfWJNwCA
+
+###############################################################################
+# HEALTH & STATUS TESTS
+###############################################################################
+
+### Root endpoint
+GET {{baseUrl}}/
+
+### Health check
+GET {{baseUrl}}/health
+
+###############################################################################
+# AUTHENTICATION TESTS
+###############################################################################
+
+### Register new user
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test1@example.com",
+  "password": "test1password123",
+  "full_name": "Test User"
+}
+
+### Login with email/password (JSON)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test1@example.com",
+  "password": "test1password123"
+}
+
+### Login with OAuth2 token format
+POST {{baseUrl}}/api/auth/token
+Content-Type: application/x-www-form-urlencoded
+
+username=test@example.com&password=testpassword123
+
+### Get current user info (requires token)
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### Update user profile
+PATCH {{baseUrl}}/api/auth/me
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "full_name": "Updated Test User",
+  "language_preference": "es",
+  "dark_mode": true
+}
+
+### Change password
+POST {{baseUrl}}/api/auth/change-password
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "current_password": "testpassword123",
+  "new_password": "newpassword456"
+}
+
+### Google OAuth login (returns auth URL)
+GET {{baseUrl}}/api/auth/google/login
+
+### Google OAuth callback (simulate - requires actual Google auth code)
+# GET {{baseUrl}}/api/auth/google/callback?code=GOOGLE_AUTH_CODE&state=OAUTH_STATE
+
+###############################################################################
+# CHAT TESTS
+###############################################################################
+
+### Get user conversations
+GET {{baseUrl}}/api/chat/conversations
+Authorization: Bearer {{token}}
+
+### Get conversations by tool context
+GET {{baseUrl}}/api/chat/conversations?tool_context=blast
+Authorization: Bearer {{token}}
+
+### Send chat message
+curl -X POST "https://openrouter.ai/api/v1/chat/completions" \
+  -H "Authorization: Bearer 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" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "meta-llama/llama-3.2-3b-instruct:free",
+    "messages": [
+      {"role": "user", "content": "Hello, test message"}
+    ],
+    "max_tokens": 100
+  }'
+
+### Send ephemeral message (not saved)
+POST {{baseUrl}}/api/chat/ephemeral
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "message": "What is a protein domain?",
+  "conversation_id": null,
+  "tool_context": "annotation"
+}
+
+### Get specific conversation
+GET {{baseUrl}}/api/chat/conversations/49
+Authorization: Bearer {{token}}
+
+### Update conversation title
+PUT {{baseUrl}}/api/chat/conversations/49?title=Updated%20Conversation%20Title&tool_context=blast
+Authorization: Bearer {{token}}
+
+### Get conversation messages
+GET {{baseUrl}}/api/chat/conversations/49/messages
+Authorization: Bearer {{token}}
+
+### Delete conversation
+DELETE {{baseUrl}}/api/chat/conversations/49
+Authorization: Bearer {{token}}
+
+###############################################################################
+# SEQUENCE SEARCH TESTS
+###############################################################################
+
+### Search sequences (all types)
+GET {{baseUrl}}/api/tools/sequences/search?query=insulin&type=all
+Authorization: Bearer {{token}}
+
+### Search nucleotide sequences
+GET {{baseUrl}}/api/tools/sequences/search?query=hemoglobin&type=nucleotide&tool_context=blast
+Authorization: Bearer {{token}}
+
+### Search protein sequences
+GET {{baseUrl}}/api/tools/sequences/search?query=P53&type=protein&tool_context=annotation
+Authorization: Bearer {{token}}
+
+### Fetch DNA sequence by ID
+GET {{baseUrl}}/api/tools/sequences/fetch?id=NM_000207.3&database=dna&tool_context=blast
+Authorization: Bearer {{token}}
+
+### Fetch protein sequence by ID
+GET {{baseUrl}}/api/tools/sequences/fetch?id=P04637&database=protein&tool_context=annotation
+Authorization: Bearer {{token}}
+
+### Fetch RNA sequence by ID
+GET {{baseUrl}}/api/tools/sequences/fetch?id=NR_046018.2&database=rna
+Authorization: Bearer {{token}}
+
+###############################################################################
+# ANNOTATION TESTS
+###############################################################################
+
+### Direct annotation with sequence data
+POST {{baseUrl}}/api/tools/annotation/annotate
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sequence": {
+    "sequence_data": "MEESQSELNIDPPLSQETFSELWNLLPENNVLSSELCPAVDELLLPESVVNWLDEDSDDAPRMPATSAPTAPGPAPSWPLSSSVPSPKTYPGTYGFRLGFLHSGTAKSVTWTYSPLLNKLFCQLAKTCPVQLWVSSPPPPNTCVRAMAIYKKSEFVTEVVRRCPHHERCSDSSDGLAPPQHLIRVEGNLRAKYLDDRNTFRHSVVVPYEPPEVGSDYTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNVLGRNSFEVRVCACPGRDRRTEEENFHKKGEPCPEPPPGSTKRALPPSTSSSPPQKKKPLDGEYFTLQIRGRERYEMFRNLNEALELKDAQSGKEPGGSRAHSSHLKAKKGQSTSRHKKLMFKREGLDSD",
+    "sequence_id": null
+  },
+  "settings": {
+    "database": "pfam",
+    "sequenceType": "protein",
+    "showFeatures": {
+      "domains": true,
+      "motifs": true,
+      "modifications": true,
+      "variants": true
+    }
+  }
+}
+
+### Direct annotation with sequence ID
+POST {{baseUrl}}/api/tools/annotation/annotate
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sequence": {
+    "sequence_data": null,
+    "sequence_id": "P04637"
+  },
+  "settings": {
+    "database": "uniprot",
+    "sequenceType": "protein",
+    "showFeatures": {
+      "domains": true,
+      "motifs": true,
+      "modifications": false,
+      "variants": false
+    }
+  }
+}
+
+###############################################################################
+# BLAST TESTS
+###############################################################################
+
+### Create BLAST search job
+POST {{baseUrl}}/api/tools/blast/search
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sequence": "ATGCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+  "database": "nt",
+  "program": "blastn",
+  "evalue": 0.001,
+  "max_hits": 10,
+  "output_format": "xml",
+  "use_remote_api": true
+}
+
+### Create BLAST protein search
+POST {{baseUrl}}/api/tools/blast/search
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "sequence": "ATGGCACAGGATGAACAGTTTATCCACGAATAAATAACATAAGGTAACAGCCTTTAATGATTGGAGCTGTGAGTACAAAGTCATGCATTTATTATAATTTTTTTTATAGTTATACCTATTATAATTGGAGGTTTCGGTAACTGACTAATCCCCCTAATAATTGGAGCCCCAGACATAGCATTCCCCCGAATAAATAATATAAGTTTTTGACTACTACCCACCTTCCTTTAATGATTGGAGCACCAGATATGGCATTTCCTCGTTTAAATAATATAAGATTTTGACTACTACCACCTTCCTTTAATGATTGGA",
+  "database": "nt",
+  "program": "blastn",
+  "evalue": 0.01,
+  "max_hits": 5,
+  "output_format": "xml",
+  "use_remote_api": true
+}
+
+### Get BLAST jobs
+GET {{baseUrl}}/api/tools/blast/jobs
+Authorization: Bearer {{token}}
+
+### Get BLAST jobs with pagination
+GET {{baseUrl}}/api/tools/blast/jobs?skip=0&limit=20
+Authorization: Bearer {{token}}
+
+### Get specific BLAST job
+GET {{baseUrl}}/api/tools/blast/jobs/8
+Authorization: Bearer {{token}}
+
+### Get BLAST job status
+GET {{baseUrl}}/api/tools/blast/jobs/8/status
+Authorization: Bearer {{token}}
+
+### Get BLAST results
+GET {{baseUrl}}/api/tools/blast/jobs/8/results
+Authorization: Bearer {{token}}
+
+### Delete BLAST job
+DELETE {{baseUrl}}/api/tools/blast/jobs/8
+Authorization: Bearer {{token}}
+
+###############################################################################
+# BLAST EXPORT TESTS
+###############################################################################
+
+### Export BLAST results as XML
+GET {{baseUrl}}/api/tools/blast/jobs/8/export/xml
+Authorization: Bearer {{token}}
+
+### Export BLAST results as JSON
+GET {{baseUrl}}/api/tools/blast/jobs/8/export/json
+Authorization: Bearer {{token}}
+
+### Export BLAST results as CSV
+GET {{baseUrl}}/api/tools/blast/jobs/8/export/csv
+Authorization: Bearer {{token}}
+
+### Export BLAST results as FASTA
+GET {{baseUrl}}/api/tools/blast/jobs/8/export/fasta
+Authorization: Bearer {{token}}
+
+### Test invalid export format
+GET {{baseUrl}}/api/tools/blast/jobs/8/export/invalid_format
+Authorization: Bearer {{token}}
+
+### Test export of non-completed job
+GET {{baseUrl}}/api/tools/blast/jobs/9/export/json
+Authorization: Bearer {{token}}
+
+###############################################################################
+# ERROR HANDLING TESTS
+###############################################################################
+
+### Test unauthorized access
+GET {{baseUrl}}/api/chat/conversations
+
+### Test invalid token
+GET {{baseUrl}}/api/chat/conversations
+Authorization: Bearer invalid_token_here
+
+### Test non-existent endpoint
+GET {{baseUrl}}/api/nonexistent/endpoint
+Authorization: Bearer {{token}}
+
+### Test invalid JSON
+POST {{baseUrl}}/api/chat/message
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "invalid_json": true,
+  "missing_required_field"
+}
+
+### Test export with non-existent job ID
+GET {{baseUrl}}/api/tools/blast/jobs/999999/export/json
+Authorization: Bearer {{token}}
+
+### Test export with unauthorized job access
+GET {{baseUrl}}/api/tools/blast/jobs/1/export/json
+Authorization: Bearer invalid_token_here
+
+###############################################################################
+# PAGINATION TESTS
+###############################################################################
+
+### Test large pagination
+GET {{baseUrl}}/api/chat/conversations?skip=100&limit=50
+Authorization: Bearer {{token}}
+
+### Test invalid pagination
+GET {{baseUrl}}/api/tools/annotation/jobs?skip=-1&limit=1000
+Authorization: Bearer {{token}}
+
+###############################################################################
+# CONTENT TYPE TESTS
+###############################################################################
+
+### Test form-encoded login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+email=test1@example.com&password=test1password123
