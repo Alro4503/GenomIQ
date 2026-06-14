@@ -3,6 +3,7 @@
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
+import DemoBanner from '@/components/layout/DemoBanner';
 import Footer from '@/components/layout/Footer';
 import LoadingScreen from '@/components/layout/LoadingScreen';
 import { ThemeProvider } from '@/context/ThemeContext';
@@ -86,6 +87,7 @@ export default function RootLayout({
                   <LoadingScreen />
                 ) : (
                   <div className="flex flex-col min-h-screen">
+                    <DemoBanner />
                     <Navbar />
                     <main className="flex-grow">
                       {children}
