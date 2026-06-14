@@ -176,29 +176,13 @@ const Navbar: React.FC = () => {
         {/* Right Controls (25% del espacio) */}
         <div className="w-3/4 md:w-1/4 flex items-center justify-end space-x-4">
           {/* Login Button or User Avatar */}
-          {user ? (
-            <>
-              {/* Desktop User Avatar */}
-              <div className="hidden md:block">
-                <UserAvatar />
-              </div>
-              
-              {/* Mobile User Avatar instead of hamburger button */}
-              <div className="md:hidden">
-                <MobileUserAvatar />
-              </div>
-            </>
-          ) : (
-            <>
-              {/* Login button for both mobile and desktop */}
-              <Link
-                href="/auth/login"
-                className={authButtonStyle('/auth/login')}
-              >
-                {t('nav.login')}
-              </Link>
-            </>
-          )}
+          {/* Demo mode: always show user avatar */}
+          <div className="hidden md:block">
+            <UserAvatar />
+          </div>
+          <div className="md:hidden">
+            <MobileUserAvatar />
+          </div>
         </div>
       </div>
 
@@ -302,25 +286,9 @@ const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Auth buttons - Logout */}
-            <div className="mobile-auth-buttons space-y-3 border-t border-neutral-200 dark:border-neutral-700 pt-3">
-              <button
-                onClick={() => {
-                  logout();
-                  setIsMenuOpen(false);
-                }}
-                className="flex items-center w-full px-2 py-2 text-sm text-red-600 hover:bg-red-100 dark:hover:bg-red-900/20 rounded-md transition-colors"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                  />
-                </svg>
-                {t('nav.logout')}
-              </button>
+            {/* Demo mode: no logout */}
+            <div className="border-t border-neutral-200 dark:border-neutral-700 pt-3">
+              <p className="px-2 text-xs text-neutral-400 dark:text-neutral-500">Portfolio Demo Mode</p>
             </div>
           </div>
         </div>

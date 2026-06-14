@@ -2,22 +2,8 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 // Determine API URL based on environment
 const getApiBaseUrl = () => {
-  // For production environments
-  if (typeof window !== 'undefined') {
-    const hostname = window.location.hostname;
-    if (hostname === 'genomiq.cat' || hostname.endsWith('.genomiq.cat')) {
-      return 'https://genomiq.cat/api';
-    }
-  }
-  
-  // Asegurar que la URL del entorno es completa y válida
-  const envUrl = process.env.NEXT_PUBLIC_API_URL;
-  if (envUrl && (envUrl.startsWith('http://') || envUrl.startsWith('https://'))) {
-    return envUrl;
-  }
-  
-  // Default para desarrollo
-  return 'http://localhost:8000';
+  // Portfolio demo: use relative URLs so Next.js API Routes handle everything
+  return '';
 };
 
 // Create axios instance with better logging
@@ -32,14 +18,7 @@ export const api = axios.create({
   }
 });
 
-// Initialize auth header from localStorage (client-side only)
-if (typeof window !== 'undefined') {
-  const token = localStorage.getItem('token');
-  
-  if (token) {
-    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  }
-}
+// Portfolio demo: no auth token needed
 
 // Add request interceptor for debugging
 api.interceptors.request.use(
@@ -104,17 +83,7 @@ api.interceptors.response.use(
         });
       }
       
-      // Handle 401 Unauthorized errors
-      if (error.response.status === 401 && typeof window !== 'undefined') {
-        console.log('401 Unauthorized - Redirecting to login');
-        // Clear token if unauthorized
-        localStorage.removeItem('token');
-        
-        // Redirect to login (except on login page)
-        if (window.location.pathname !== '/auth/login') {
-          window.location.href = '/auth/login';
-        }
-      }
+      // Portfolio demo: no auth redirects needed
       
       // Para errores relacionados con sequenceDatabaseService, proporcionar un mensaje claro
       if (error.config?.url?.includes('/tools/sequences/')) {
