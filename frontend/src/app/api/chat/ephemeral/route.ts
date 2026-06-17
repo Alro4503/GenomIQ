@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-1.5-flash-latest';
+const GEMINI_MODEL = 'gemini-2.0-flash';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 const SYSTEM_PROMPT = `You are GenomIQ AI, an expert bioinformatics assistant.
@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       message: responseText,
       conversation_id: Date.now(),
       message_id: Date.now() + 1,
-      ai_provider: 'gemini-1.5-flash',
+      ai_provider: 'gemini-2.0-flash',
       recommended_tools: mentionedTools.join(','),
     });
   } catch (error: any) {

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-1.5-flash-latest';
+const GEMINI_MODEL = 'gemini-2.0-flash';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 const SYSTEM_PROMPT = `You are GenomIQ AI, an expert bioinformatics assistant integrated into the GenomIQ platform.
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
       const errorText = await geminiResponse.text();
       console.error('Gemini API error:', errorText);
       return NextResponse.json(
-        { error: `Gemini error ${geminiResponse.status}: ${errorText.slice(0, 300)}` },
+        { error: 'AI service error. Please try again.' },
         { status: 502 }
       );
     }
@@ -116,7 +116,7 @@ export async function POST(request: NextRequest) {
       message: responseText,
       conversation_id: convId,
       message_id: messageId,
-      ai_provider: 'gemini-1.5-flash',
+      ai_provider: 'gemini-2.0-flash',
       recommended_tools: mentionedTools.join(','),
     });
   } catch (error: any) {
