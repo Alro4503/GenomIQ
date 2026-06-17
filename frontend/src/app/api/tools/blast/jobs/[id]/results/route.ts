@@ -40,8 +40,9 @@ async function fetchNcbiBlastResults(rid: string) {
   };
 }
 
-export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
-  const id = parseInt(params.id, 10);
+export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id: idStr } = await params;
+  const id = parseInt(idStr, 10);
   const job = getJob(id);
   if (!job) return NextResponse.json({ error: 'Job not found' }, { status: 404 });
 
