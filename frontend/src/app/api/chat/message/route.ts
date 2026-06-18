@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
       const errorText = await geminiResponse.text();
       console.error('Gemini API error:', errorText);
       return NextResponse.json(
-        { error: 'AI service error. Please try again.' },
+        { error: `Gemini ${geminiResponse.status}: ${errorText.slice(0, 400)}` },
         { status: 502 }
       );
     }
