@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-2.0-flash';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
+const GROQ_MODEL = 'llama-3.3-70b-versatile';
+const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 const SYSTEM_PROMPT = `You are GenomIQ AI, an expert bioinformatics assistant.
 You help users with genomic and bioinformatic analysis, explain scientific concepts,
@@ -17,34 +17,36 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 });
     }
 
-    if (!GEMINI_API_KEY) {
-      return NextResponse.json(
-        { error: 'AI service not configured.' },
-        { status: 503 }
-      );
+    if (!GROQ_API_KEY) {
+      return NextResponse.json({ error: 'AI service not configured.' }, { status: 503 });
     }
 
     const systemText = SYSTEM_PROMPT +
       (tool_context ? `\n\nContext: User is working with the ${tool_context} tool.` : '');
 
-    const geminiBody = {
-      system_instruction: { parts: [{ text: systemText }] },
-      contents: [{ role: 'user', parts: [{ text: message }] }],
-      generationConfig: { temperature: 0.7, maxOutputTokens: 1000 },
-    };
-
-    const geminiResponse = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
+    const groqResponse = await fetch(GROQ_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(geminiBody),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${GROQ_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: GROQ_MODEL,
+        messages: [
+          { role: 'system', content: systemText },
+          { role: 'user', content: message },
+        ],
+        temperature: 0.7,
+        max_tokens: 1000,
+      }),
     });
 
-    if (!geminiResponse.ok) {
+    if (!groqResponse.ok) {
       return NextResponse.json({ error: 'AI service error. Please try again.' }, { status: 502 });
     }
 
-    const geminiData = await geminiResponse.json();
-    const responseText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const groqData = await groqResponse.json();
+    const responseText = groqData.choices?.[0]?.message?.content || '';
 
     const toolKeywords = ['blast', 'alignment', 'annotation', 'translation', 'visualization'];
     const mentionedTools = toolKeywords.filter(t => responseText.toLowerCase().includes(t));
@@ -53,7 +55,7 @@ export async function POST(request: NextRequest) {
       message: responseText,
       conversation_id: Date.now(),
       message_id: Date.now() + 1,
-      ai_provider: 'gemini-2.0-flash',
+      ai_provider: 'groq-llama-3.3-70b',
       recommended_tools: mentionedTools.join(','),
     });
   } catch (error: any) {
