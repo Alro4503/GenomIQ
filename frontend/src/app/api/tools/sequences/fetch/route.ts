@@ -62,7 +62,10 @@ export async function GET(request: NextRequest) {
     }
 
     if (!sequence) {
-      return NextResponse.json({ error: 'Sequence not found' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'Sequence content not available for this record. Try searching for a specific gene or UniProt ID (e.g. P12345).' },
+        { status: 404 }
+      );
     }
 
     return NextResponse.json({ sequence });

@@ -175,7 +175,9 @@ const sequenceDatabaseService = {
         }
         
         console.error('Error fetching sequence:', error);
-        throw error;
+        const axiosErr = error as any;
+        const serverMsg = axiosErr?.response?.data?.error;
+        throw new Error(serverMsg || 'Could not retrieve this sequence. Try a different result or paste the sequence manually.');
       }
     }
     
