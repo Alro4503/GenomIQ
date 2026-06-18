@@ -190,7 +190,7 @@ const SequenceDatabaseSearch: React.FC<SequenceDatabaseSearchProps> = ({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={t('alignment.searchPlaceholder')}
+            placeholder={t('alignment.searchPlaceholder') || 'e.g. BRCA1, insulin, NM_007294, P04637...'}
             className="pl-10 w-full py-2 rounded-md border bg-white dark:bg-neutral-800 border-purple-300 dark:border-purple-700 text-sm text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             data-sequence-input-id={inputId}
           />

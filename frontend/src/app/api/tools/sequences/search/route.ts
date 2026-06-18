@@ -19,7 +19,9 @@ function ncbiParams(extra: Record<string, string> = {}) {
 
 async function searchNcbi(query: string, db: string, retmax = 8) {
   try {
-    const searchUrl = `${NCBI_BASE}/esearch.fcgi?${ncbiParams({ db, term: query, retmax: String(retmax) })}`;
+    // For nuccore, restrict to RefSeq so results are reliably fetchable (NM_, NR_, NC_ accessions)
+    const term = db === 'nuccore' ? `${query} AND refseq[filter]` : query;
+    const searchUrl = `${NCBI_BASE}/esearch.fcgi?${ncbiParams({ db, term, retmax: String(retmax) })}`;
     const searchRes = await fetch(searchUrl, { signal: AbortSignal.timeout(20000) });
     if (!searchRes.ok) return [];
     const searchData = await searchRes.json();
