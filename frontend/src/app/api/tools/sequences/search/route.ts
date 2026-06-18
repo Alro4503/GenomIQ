@@ -36,8 +36,10 @@ async function searchNcbi(query: string, db: string, retmax = 8) {
 
     return uids.map((uid: string) => {
       const entry = summaryData.result[uid];
+      // Use accessionversion (e.g. "NM_001234.3") as ID — more reliable for efetch than numeric UID
+      const accession = entry?.accessionversion || entry?.caption || uid;
       return {
-        id: uid,
+        id: accession,
         name: entry?.title || entry?.caption || `${db}:${uid}`,
         organism: entry?.organism || 'Unknown',
         length: entry?.slen || entry?.length || 0,
