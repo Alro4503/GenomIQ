@@ -2,8 +2,7 @@
 
 <div align="center">
   <img src="docs/logo-genomiq.png" alt="GenomIQ Logo" width="200"/>
-  
-  🌎 **Live site:** [https://genomiq.cat/](https://genomiq.cat/)
+
 </div>
 
 ## About the Project
