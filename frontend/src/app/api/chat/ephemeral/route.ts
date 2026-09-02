@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
-const GROQ_MODEL = 'llama-3.3-70b-versatile';
+const GROQ_MODEL = 'openai/gpt-oss-120b';
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 const SYSTEM_PROMPT = `You are GenomIQ AI, an expert bioinformatics assistant.
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       message: responseText,
       conversation_id: Date.now(),
       message_id: Date.now() + 1,
-      ai_provider: 'groq-llama-3.3-70b',
+      ai_provider: 'groq-gpt-oss-120b',
       recommended_tools: mentionedTools.join(','),
     });
   } catch (error: any) {
