@@ -3,6 +3,8 @@
 <div align="center">
   <img src="docs/logo-genomiq.png" alt="GenomIQ Logo" width="200"/>
 
+  ### 🔗 Live Demo: [https://genom-iq-tomd.vercel.app/](https://genom-iq-tomd.vercel.app/)
+
 </div>
 
 ## About the Project
