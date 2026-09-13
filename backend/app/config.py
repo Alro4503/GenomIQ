@@ -36,10 +36,10 @@ class Settings(BaseSettings):
             return f"{self.PROJECT_WEBSITE_URL}/auth/google/callback"
         return f"{self.FRONTEND_BASE_URL}/auth/google/callback"
     
-    OPENROUTER_API_KEY: str = "REDACTED"
-    
+    OPENROUTER_API_KEY: str = ""
+
     # NCBI API settings
-    NCBI_API_KEY: str = "REDACTED"  # Add your NCBI API key here
+    NCBI_API_KEY: str = ""  # Add your NCBI API key here
     NCBI_TOOL_NAME: str = "GenomIQ"
     NCBI_EMAIL: str = "vmadarnasinfo@gmail.com"  # Use your contact email
     NCBI_MAX_REQUESTS_PER_SECOND: int = 3  # Default without API key
